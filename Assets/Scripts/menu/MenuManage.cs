@@ -10,4 +10,10 @@ public class MenuManage : MonoBehaviour
     public void Jogar(){
         SceneManager.LoadScene("Level1");
     }
+    public void Opitions(){
+        SceneManager.LoadScene("Opitions");
+    }
+    public void Inicio(){
+        SceneManager.LoadScene("Menu");
+    }
 }
