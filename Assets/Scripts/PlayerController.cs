@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public GameObject projectilePrefab;
     public PlayerInput pInput;
     private float horizontalInput;
-
+    private float verticalInput;
 
     // Start is called before the first frame update
     void Start()
@@ -24,14 +24,15 @@ public class PlayerController : MonoBehaviour
         //float horizontalInput = Input.GetAxis("Horizontal");
         // movimenta o player para esquerda e direita a partir da entrada do usu�rio
         transform.Translate(Vector3.right * speed * Time.deltaTime * horizontalInput);
+        transform.Translate(Vector3.forward * speed * Time.deltaTime * verticalInput);
         // mant�m o player dentro dos limites do jogo (eixo x)
         if (transform.position.x < -xRange)
         {
-            transform.position = new Vector3(-xRange, transform.position.y, transform.position.y);
+            transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
         }
         if (transform.position.x > xRange)
         {
-            transform.position = new Vector3(xRange, transform.position.y, transform.position.y);
+            transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }
         // dispara comida ao pressionar barra de espa�o
        
@@ -39,8 +40,9 @@ public class PlayerController : MonoBehaviour
     }
     public void OnMoveEvent(InputAction.CallbackContext value){
         horizontalInput = value.ReadValue<Vector2>().x;
+        verticalInput = value.ReadValue<Vector2>().y;
     }
     public void OnFireEvent(InputAction.CallbackContext value){
-Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+        Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
     }
 }
