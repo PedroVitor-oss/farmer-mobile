@@ -15,9 +15,27 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Fire1",
+                    "name": "Fire",
                     "type": "Button",
                     "id": "f3f85765-9868-4a7c-822e-024417f9e1d0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "AtivarGhost",
+                    "type": "Button",
+                    "id": "503c0121-7f25-497a-a2e6-ec1d0e830182",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "DesativarGhost",
+                    "type": "Button",
+                    "id": "a20055f9-59f0-44bf-940e-980b05bc8d33",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -142,7 +160,29 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Fire1",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "24f314bf-579f-4473-9e4a-7a8177a79c21",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AtivarGhost",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "77a1b29a-af26-47cb-ab40-cdd4bd676e09",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DesativarGhost",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -1376,6 +1376,7 @@ MonoBehaviour:
   MenuOpitions: {fileID: 0}
   Confimation: {fileID: 1699460122}
   NextLevel: Level2
+  anterior: Menu
 --- !u!4 &1207618042
 Transform:
   m_ObjectHideFlags: 0
@@ -2043,6 +2044,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 199884, guid: 3cf7f489270aac84fb12901330960a5b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400046, guid: 3cf7f489270aac84fb12901330960a5b, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2203,6 +2208,7 @@ MonoBehaviour:
   MenuOpitions: {fileID: 0}
   Confimation: {fileID: 0}
   NextLevel: 
+  anterior: 
 --- !u!114 &2060302688
 MonoBehaviour:
   m_ObjectHideFlags: 0

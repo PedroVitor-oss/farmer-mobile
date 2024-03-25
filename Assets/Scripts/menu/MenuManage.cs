@@ -11,6 +11,17 @@ public class MenuManage : MonoBehaviour
     [SerializeField] private GameObject MenuOpitions;
     [SerializeField] private GameObject Confimation;
     [SerializeField] private string NextLevel;
+    [SerializeField] private string anterior;
+
+    void Update(){
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            if(anterior!=""){
+                SceneManager.LoadScene(anterior);
+            }else{
+                OpenConfirm();
+            }
+        }
+    }
 
 
     public void Jogar(){
