@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public PlayerInput pInput;
     private float horizontalInput;
     private float verticalInput;
+    private bool ghost = false;
 
     // Start is called before the first frame update
     void Start()
@@ -37,33 +38,35 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }
-        //ativar gost
-        // if(Input.GetKeyDown(KeyCode.LeftShift)){
-        //     gostObj.SetActive(true);
-        //     famerObj.SetActive(false);
-        // }
-        // if(Input.GetKeyUp(KeyCode.LeftShift)){
-        //     gostObj.SetActive(false);
-        //     famerObj.SetActive(true);
-        // }
-
-        // by maercelo
+     
+        
        
         
     }
 
 
-    // // Send Mensage
-    // void OnMove(InputValue value){
-    //     horizontalInput = value.Get<Vector2>().x;
-    //     verticalInput = value.Get<Vector2>().y;
-    // }
-    // void OnFire(InputValue value){
-    //   if(value.isPressed){
-    //         Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
-    //   }
-    // }
-
+    /* ------------- Send Mensage ------------- */
+    void OnMove(InputValue value){
+        horizontalInput = value.Get<Vector2>().x;
+        verticalInput = value.Get<Vector2>().y;
+    }
+    void OnFire(InputValue value){
+      if(value.isPressed){
+            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+      }
+    }
+   
+    public void  OnGhost(InputValue value){
+        if(value.isPressed ){
+                
+                //gostObj.SetActive(true);
+                famerObj.SetActive(false);
+            }else{
+                //gostObj.SetActive(false);
+                famerObj.SetActive(true);
+                
+        }
+    }
 
 
 
@@ -71,31 +74,32 @@ public class PlayerController : MonoBehaviour
 
     
 
-    // UNVOK UINTY EVENT
-    public void OnMoveEvent(InputAction.CallbackContext value){
-        horizontalInput = value.ReadValue<Vector2>().x;
-        verticalInput = value.ReadValue<Vector2>().y;
-        
-    }
-    public void OnFireEvent(InputAction.CallbackContext value){
+    /* ------------- UNVOK UINTY EVENT ------------- */
+    // public void MoveEvent(InputAction.CallbackContext value){
+    //     horizontalInput = value.ReadValue<Vector2>().x;
+    //     verticalInput = value.ReadValue<Vector2>().y;
+    // }
 
-        
-        Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
-     }
-    // public void OnDesativarGhostEvent(InputAction.CallbackContext value)
-    // {
-        
-    //         gostObj.SetActive(false);
-    //         famerObj.SetActive(true);
-    //         Debug.Log("desativar fantasma");
+    // public void FireEvent(InputAction.CallbackContext value){    
+    //     Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+    //  }
+  
+    // public void  GhostEvent(InputAction.CallbackContext text){
+    //     //me jeito
+    //     if(ghost){
+    //         Debug.Log("desativar ghost");
+    //        // gostObj.SetActive(false);
+    //             famerObj.SetActive(true);
+    //         ghost = false;          
+    //     }else{
+    //         Debug.Log("ativar ghost");
+    //        // gostObj.SetActive(true);
+    //             famerObj.SetActive(false);
+    //         ghost = true;
+    //     }
     // }
-    // public void OnAtivarGhostEvent(InputAction.CallbackContext value)
-    // {
-        
-    //         gostObj.SetActive(true);
-    //         famerObj.SetActive(false);
-    //         Debug.Log("ativar fantasma");
-    // }
+
+   
 
 
 }
