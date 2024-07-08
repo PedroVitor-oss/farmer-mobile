@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,9 +13,12 @@ public class PlayerController : MonoBehaviour
     public GameObject famerObj;
     public GameObject gostObj;
     public PlayerInput pInput;
+    public Slider GhostTimeSlider;
     private float horizontalInput;
     private float verticalInput;
     private bool ghost = false;
+    public int quantPizza = 16;
+    private float ghostTime = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -38,12 +43,31 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }
-     
+
+        if(!famerObj.active){
+            ghostTime-=Time.deltaTime;
+        }else if(ghostTime<5){
+            ghostTime+=Time.deltaTime;
+        }
         
+        GhostTimeSlider.value = ghostTime;
+        
+        if(ghostTime<=0){
+                            famerObj.SetActive(true);
+
+        }
        
         
     }
-
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("MAMAMIA");
+        if(other.gameObject.tag == "pizzabox")
+        {
+            quantPizza+=8;
+            Destroy(other.gameObject);
+        }
+    }
 
     /* ------------- Send Mensage ------------- */
     void OnMove(InputValue value){
@@ -51,8 +75,9 @@ public class PlayerController : MonoBehaviour
         verticalInput = value.Get<Vector2>().y;
     }
     void OnFire(InputValue value){
-      if(value.isPressed){
+      if(value.isPressed && quantPizza>0){
             Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+            quantPizza--;
       }
     }
    
