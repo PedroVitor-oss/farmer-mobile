@@ -12,7 +12,15 @@ public class MenuManage : MonoBehaviour
     [SerializeField] private GameObject Confimation;
     [SerializeField] private string NextLevel;
     [SerializeField] private string anterior;
+    public bool dev = true;
+        public GameObject MobilePainel;
 
+    void Start(){
+         if (Application.platform != RuntimePlatform.Android && !dev)
+        {
+            MobilePainel.SetActive(false);
+        }
+    }
     void Update(){
         if(Input.GetKeyDown(KeyCode.Escape)){
             if(anterior!=""){
