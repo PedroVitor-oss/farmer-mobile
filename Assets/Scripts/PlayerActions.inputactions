@@ -24,15 +24,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "ghostEvent",
-                    "type": "Button",
-                    "id": "503c0121-7f25-497a-a2e6-ec1d0e830182",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Ghost",
                     "type": "Button",
                     "id": "a20055f9-59f0-44bf-940e-980b05bc8d33",
@@ -154,8 +145,63 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "dpad",
+                    "id": "6a539743-494f-4881-a516-32cdbdb90f5a",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "1cd717b4-8097-440a-ba88-874a219499cf",
+                    "path": "<Gamepad>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "59ff4821-a4a6-4d5c-86f1-b398178b7f54",
+                    "path": "<Gamepad>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "10693b45-c648-4b85-bb53-791cb3b29bf1",
+                    "path": "<Gamepad>/dpad/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "6aa29aee-d13b-4491-ae46-02061387fa06",
+                    "path": "<Gamepad>/dpad/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
-                    "id": "f0015e12-6ee7-491f-8d58-1be1dfc75791",
+                    "id": "c000d02e-6ceb-4750-b275-93fbc2054b70",
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "",
@@ -188,12 +234,12 @@
                 },
                 {
                     "name": "",
-                    "id": "24f314bf-579f-4473-9e4a-7a8177a79c21",
-                    "path": "<Keyboard>/ctrl",
-                    "interactions": "Tap(duration=1E+37)",
+                    "id": "325d6733-5b47-4b41-81c9-5fc6b59ad894",
+                    "path": "<Touchscreen>/primaryTouch/tap",
+                    "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ghostEvent",
+                    "action": "Fire",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

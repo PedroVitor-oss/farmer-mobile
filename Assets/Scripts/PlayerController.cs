@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     private float horizontalInput;
     private float verticalInput;
     private bool ghost = false;
-    public int quantPizza = 16;
+    public int quantPizza = 99999;
     private float ghostTime = 5;
 
     // Start is called before the first frame update
